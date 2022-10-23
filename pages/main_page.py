@@ -5,9 +5,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from base.base_class import Base
 
 
-class Login_page(Base):
+class Main_page(Base):
 
-    url = 'https://www.saucedemo.com'
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -15,50 +14,34 @@ class Login_page(Base):
 
     #Locators
 
-    user_name = "//input[@id = 'user-name']"
-    password = "//input[@id = 'password']"
-    login_button = "//input[@id = 'login-button']"
-    main_word = "//span[@class = 'title']"
+    select_product_1 = "//button[@id = 'add-to-cart-sauce-labs-backpack']"
+    cart = "//div[@id='shopping_cart_container']"
 
     #Getters
 
-    def get_user_name(self):
-        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.user_name)))
+    def get_select_product_1(self):
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.select_product_1)))
 
-    def get_password(self):
-        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.password)))
-
-    def get_login_button(self):
-        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.login_button)))
-
-    def get_main_word(self):
-        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.main_word)))
-
+    def get_cart(self):
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.cart)))
 
     #Actions
 
-    def inpunt_username(self, user_name):
-        self.get_user_name().send_keys(user_name)
-        print("Input user name")
+    def click_select_product_1(self):
+        self.get_select_product_1().click()
+        print("Click select product 1")
 
-    def inpunt_password(self, password):
-        self.get_password().send_keys(password)
-        print("Input password")
-
-    def click_login_button(self):
-        self.get_login_button().click()
-        print("Click login button")
+    def click_cart(self):
+        self.get_cart().click()
+        print("Click cart")
 
     # Methods
 
-    def autorization(self):
-        self.driver.get(self.url)
-        self.driver.maximize_window()
+    def select_product(self):
         self.get_current_url()
-        self.inpunt_username("standard_user")
-        self.inpunt_password("secret_sauce")
-        self.click_login_button()
-        self.assert_word(self.get_main_word(), "PRODUCTS")
+        self.click_select_product_1()
+        self.click_cart()
+
 
 
 
