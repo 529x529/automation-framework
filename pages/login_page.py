@@ -37,11 +37,11 @@ class Login_page(Base):
 
     #Actions
 
-    def inpunt_username(self, user_name):
+    def input_username(self, user_name):
         self.get_user_name().send_keys(user_name)
         print("Input user name")
 
-    def inpunt_password(self, password):
+    def input_password(self, password):
         self.get_password().send_keys(password)
         print("Input password")
 
@@ -55,8 +55,8 @@ class Login_page(Base):
         self.driver.get(self.url)
         self.driver.maximize_window()
         self.get_current_url()
-        self.inpunt_username("standard_user")
-        self.inpunt_password("secret_sauce")
+        self.input_username("standard_user")
+        self.input_password("secret_sauce")
         self.click_login_button()
         self.assert_word(self.get_main_word(), "PRODUCTS")
 
