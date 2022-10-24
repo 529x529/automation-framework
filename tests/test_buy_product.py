@@ -7,8 +7,10 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from pages.cart_page import Cart_page
 from pages.client_information_page import Client_information_page
+from pages.finish_page import Finish_page
 from pages.login_page import Login_page
 from pages.main_page import Main_page
+from pages.payment_page import Payment_page
 
 
 def test_buy_product():
@@ -27,5 +29,11 @@ def test_buy_product():
 
     cip = Client_information_page(driver)
     cip.input_customer_information()
+
+    pg = Payment_page(driver)
+    pg.payment()
+
+    f = Finish_page(driver)
+    f.finish()
 
     time.sleep(5)
