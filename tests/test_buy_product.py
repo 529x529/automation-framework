@@ -1,5 +1,6 @@
 import time
 
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -12,28 +13,71 @@ from pages.login_page import Login_page
 from pages.main_page import Main_page
 from pages.payment_page import Payment_page
 
-
-def test_buy_product():
+@pytest.mark.run(order=2)
+def test_buy_product_1():
     driver = webdriver.Chrome(executable_path='/Users/mikhailrezchikov/PycharmProjects/resource/chromedriver')
 
-    print("Start Test")
+    print("Start Test 1")
 
     login = Login_page(driver)
     login.autorization()
 
     mp = Main_page(driver)
-    mp.select_product()
+    mp.select_products_1()
 
     cp = Cart_page(driver)
     cp.product_confirmation()
 
-    cip = Client_information_page(driver)
-    cip.input_customer_information()
+    # cip = Client_information_page(driver)
+    # cip.input_customer_information()
+    #
+    # pg = Payment_page(driver)
+    # pg.payment()
+    #
+    # f = Finish_page(driver)
+    # f.finish()
 
-    pg = Payment_page(driver)
-    pg.payment()
 
-    f = Finish_page(driver)
-    f.finish()
-
+    print("Finish test 1")
     time.sleep(5)
+    driver.quit()
+
+@pytest.mark.run(order=1)
+def test_buy_product_2():
+    driver = webdriver.Chrome(executable_path='/Users/mikhailrezchikov/PycharmProjects/resource/chromedriver')
+
+    print("Start Test 2")
+
+    login = Login_page(driver)
+    login.autorization()
+
+    mp = Main_page(driver)
+    mp.select_products_2()
+
+    cp = Cart_page(driver)
+    cp.product_confirmation()
+
+
+    print("Finish test 2")
+    time.sleep(5)
+    driver.quit()
+
+@pytest.mark.run(order=3)
+def test_buy_product_3():
+    driver = webdriver.Chrome(executable_path='/Users/mikhailrezchikov/PycharmProjects/resource/chromedriver')
+
+    print("Start Test 3")
+
+    login = Login_page(driver)
+    login.autorization()
+
+    mp = Main_page(driver)
+    mp.select_products_3()
+
+    cp = Cart_page(driver)
+    cp.product_confirmation()
+
+
+    print("Finish test 3")
+    time.sleep(5)
+    driver.quit()

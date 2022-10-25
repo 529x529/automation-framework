@@ -29,6 +29,7 @@ class Payment_page(Base):
     # Methods
 
     def payment(self):
+        self.get_current_url()
         self.click_finish_button()
 
 
