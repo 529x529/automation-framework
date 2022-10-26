@@ -13,7 +13,7 @@ from pages.login_page import Login_page
 from pages.main_page import Main_page
 from pages.payment_page import Payment_page
 
-@pytest.mark.run(order=2)
+@pytest.mark.run(order=3)
 def test_buy_product_1():
     driver = webdriver.Chrome(executable_path='/Users/mikhailrezchikov/PycharmProjects/resource/chromedriver')
 
@@ -62,7 +62,7 @@ def test_buy_product_2():
     time.sleep(5)
     driver.quit()
 
-@pytest.mark.run(order=3)
+@pytest.mark.run(order=2)
 def test_buy_product_3():
     driver = webdriver.Chrome(executable_path='/Users/mikhailrezchikov/PycharmProjects/resource/chromedriver')
 
