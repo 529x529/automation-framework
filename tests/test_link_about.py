@@ -13,7 +13,7 @@ from pages.main_page import Main_page
 from pages.payment_page import Payment_page
 
 
-def test_link_about():
+def test_link_about(set_up):
     driver = webdriver.Chrome(executable_path='/Users/mikhailrezchikov/PycharmProjects/resource/chromedriver')
 
     print("Start Test")
@@ -25,5 +25,5 @@ def test_link_about():
     mp.select_menu_about()
 
     print("Finish test")
-    time.sleep(5)
+    # time.sleep(5)
     driver.quit()

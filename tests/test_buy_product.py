@@ -13,8 +13,8 @@ from pages.login_page import Login_page
 from pages.main_page import Main_page
 from pages.payment_page import Payment_page
 
-@pytest.mark.run(order=3)
-def test_buy_product_1():
+# @pytest.mark.run(order=3)
+def test_buy_product_1(set_up, set_group):
     driver = webdriver.Chrome(executable_path='/Users/mikhailrezchikov/PycharmProjects/resource/chromedriver')
 
     print("Start Test 1")
@@ -28,22 +28,22 @@ def test_buy_product_1():
     cp = Cart_page(driver)
     cp.product_confirmation()
 
-    # cip = Client_information_page(driver)
-    # cip.input_customer_information()
-    #
-    # pg = Payment_page(driver)
-    # pg.payment()
-    #
-    # f = Finish_page(driver)
-    # f.finish()
+    cip = Client_information_page(driver)
+    cip.input_customer_information()
+
+    pg = Payment_page(driver)
+    pg.payment()
+
+    f = Finish_page(driver)
+    f.finish()
 
 
     print("Finish test 1")
-    time.sleep(5)
+    # time.sleep(5)
     driver.quit()
 
-@pytest.mark.run(order=1)
-def test_buy_product_2():
+# @pytest.mark.run(order=1)
+def test_buy_product_2(set_up, set_group):
     driver = webdriver.Chrome(executable_path='/Users/mikhailrezchikov/PycharmProjects/resource/chromedriver')
 
     print("Start Test 2")
@@ -59,11 +59,11 @@ def test_buy_product_2():
 
 
     print("Finish test 2")
-    time.sleep(5)
+    # time.sleep(5)
     driver.quit()
 
-@pytest.mark.run(order=2)
-def test_buy_product_3():
+# @pytest.mark.run(order=2)
+def test_buy_product_3(set_up, set_group):
     driver = webdriver.Chrome(executable_path='/Users/mikhailrezchikov/PycharmProjects/resource/chromedriver')
 
     print("Start Test 3")
@@ -79,5 +79,5 @@ def test_buy_product_3():
 
 
     print("Finish test 3")
-    time.sleep(5)
+    # time.sleep(5)
     driver.quit()
