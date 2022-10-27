@@ -43,41 +43,41 @@ def test_buy_product_1(set_up, set_group):
     driver.quit()
 
 # @pytest.mark.run(order=1)
-def test_buy_product_2(set_up, set_group):
-    driver = webdriver.Chrome(executable_path='/Users/mikhailrezchikov/PycharmProjects/resource/chromedriver')
-
-    print("Start Test 2")
-
-    login = Login_page(driver)
-    login.autorization()
-
-    mp = Main_page(driver)
-    mp.select_products_2()
-
-    cp = Cart_page(driver)
-    cp.product_confirmation()
-
-
-    print("Finish test 2")
-    # time.sleep(5)
-    driver.quit()
-
-# @pytest.mark.run(order=2)
-def test_buy_product_3(set_up, set_group):
-    driver = webdriver.Chrome(executable_path='/Users/mikhailrezchikov/PycharmProjects/resource/chromedriver')
-
-    print("Start Test 3")
-
-    login = Login_page(driver)
-    login.autorization()
-
-    mp = Main_page(driver)
-    mp.select_products_3()
-
-    cp = Cart_page(driver)
-    cp.product_confirmation()
-
-
-    print("Finish test 3")
-    # time.sleep(5)
-    driver.quit()
+# def test_buy_product_2(set_up, set_group):
+#     driver = webdriver.Chrome(executable_path='/Users/mikhailrezchikov/PycharmProjects/resource/chromedriver')
+#
+#     print("Start Test 2")
+#
+#     login = Login_page(driver)
+#     login.autorization()
+#
+#     mp = Main_page(driver)
+#     mp.select_products_2()
+#
+#     cp = Cart_page(driver)
+#     cp.product_confirmation()
+#
+#
+#     print("Finish test 2")
+#     # time.sleep(5)
+#     driver.quit()
+#
+# # @pytest.mark.run(order=2)
+# def test_buy_product_3(set_up, set_group):
+#     driver = webdriver.Chrome(executable_path='/Users/mikhailrezchikov/PycharmProjects/resource/chromedriver')
+#
+#     print("Start Test 3")
+#
+#     login = Login_page(driver)
+#     login.autorization()
+#
+#     mp = Main_page(driver)
+#     mp.select_products_3()
+#
+#     cp = Cart_page(driver)
+#     cp.product_confirmation()
+#
+#
+#     print("Finish test 3")
+#     # time.sleep(5)
+#     driver.quit()

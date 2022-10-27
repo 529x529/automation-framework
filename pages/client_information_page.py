@@ -3,6 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from base.base_class import Base
+from utilities.logger import Logger
 
 
 class Client_information_page(Base):
@@ -54,11 +55,13 @@ class Client_information_page(Base):
     # Methods
 
     def input_customer_information(self):
+        Logger.add_start_step(method="input_customer_information")
         self.get_current_url()
         self.input_first_name("Petr")
         self.input_last_name("Petrov")
         self.input_postal_code("12314556")
         self.click_continue_button()
+        Logger.add_end_step(url=self.driver.current_url, method="input_customer_information")
 
 
 
