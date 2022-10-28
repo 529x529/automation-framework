@@ -1,5 +1,5 @@
 import time
-
+import allure
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -14,6 +14,7 @@ from pages.main_page import Main_page
 from pages.payment_page import Payment_page
 
 # @pytest.mark.run(order=3)
+@allure.description("Test buy product 1")
 def test_buy_product_1(set_up, set_group):
     driver = webdriver.Chrome(executable_path='/Users/mikhailrezchikov/PycharmProjects/resource/chromedriver')
 
