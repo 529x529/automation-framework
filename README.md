@@ -1,1 +1,1 @@
-# selenuim_tests_automation_framework
+# selenuim_tests_automation_framewor
