@@ -1,1 +1,1 @@
-# main_project
+# selenium_automation_framework
